@@ -1,0 +1,103 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lato:wght@100;300&display=swap');
+
+/* Color Theme Swatches in Hex */
+.Dark-Mode-1-hex {
+  color: #212226;
+}
+.Dark-Mode-2-hex {
+  color: #26262b;
+}
+.Dark-Mode-3-hex {
+  color: #a6a7a8;
+}
+.Dark-Mode-4-hex {
+  color: #ffffff;
+}
+.Dark-Mode-5-hex {
+  color: #04d361;
+}
+
+body {
+  background-color: #212226;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #04d361;
+  font-family: 'EB Garamond', serif;
+}
+
+#display-list {
+  margin: 0 auto;
+  padding: 0;
+  width: 95%;
+  max-width: 340px;
+  list-style-type: none;
+  font-size: 1.2em;
+  line-height: 44px;
+  background-color: #26262b;
+  color: #ffffff;
+}
+
+#display-list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid #ffffff;
+  padding: 5px;
+}
+
+#display-list li > input {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  opacity: 0;
+}
+
+#display-list li > input::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border: 1px solid;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+#display-list li > label {
+  flex: 1 0 10em;
+}
+
+#display-list li > button {
+  flex: 0 0 30px;
+}
+
+#list-footer {
+  display: flex;
+  justify-content: space-around;
+  max-width: 336px;
+  list-style: none;
+  padding: 1px;
+  margin: 0 auto;
+  border: 1px solid #ffffff;
+  font-size: 0.9em;
+  background-color: #26262b;
+  color: #ffffff;
+}
+
+#input-bar {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: 95%;
+  max-width: 340px;
+}
+
+#todo-input {
+  width: 100%;
+  line-height: 24px;
+}
