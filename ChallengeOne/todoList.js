@@ -178,7 +178,7 @@ export default class TodoList {
       
         if(task){
             // Toggle the completion of the task.
-            task.completed = !toDo.completed;
+            task.completed = !task.completed;
 
             // Save the new state of the task
             writeToLS(this.key, liveTasks);
