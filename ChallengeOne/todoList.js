@@ -23,7 +23,7 @@ function renderList(taskList, listElement, todoListObject, hidden) {
     /*****************************************************
     * A function to render the current list of tasks. 
     ****************************************************/ 
-    console.log("render was called")
+    
     // Reset the list to prepare it to display the new tasks. 
     listElement.innerHTML = "";
   
@@ -79,13 +79,19 @@ function renderList(taskList, listElement, todoListObject, hidden) {
     });
 }
 
-function renderTasksLeft(taskList){
+function renderTasksLeft(){
+    /*****************************************************
+    * A function to render tasks left 
+    *****************************************************/ 
 
     // Get the destination
     let tasksLeft = qs("#tasks-left");
+
+    // Count the tasks
     let displayList = qs("#display-list")
     let numTasksLeft = displayList.childNodes;
 
+    // Display
     tasksLeft.innerHTML = "Tasks left: " + numTasksLeft.length;
 
 }
@@ -123,6 +129,12 @@ export default class TodoList {
 
         // Bind add button to the newTask function.
         bindTouch("#add-button", this.newTask.bind(this));
+
+        // Bind complete to the filter function.
+        bindTouch("#filter-complete", this.filter.bind(this))
+
+        // Bind all to render all tasks.
+        bindTouch("#filter-all", this.displayTasks.bind(this))
 
         // Go ahead and list the tasks. 
         this.displayTasks();
@@ -206,6 +218,20 @@ export default class TodoList {
 
     }
 
+    filter() {
+        /*****************************************************
+        * A function to filter tasks based on complete
+        *****************************************************/ 
+       let currentTasks = getTasks(this.key);
+
+       let displayTasks = currentTasks.filter((task)=>{
+            return task.completed
+       });
+       console.log(displayTasks)
+       let hidden = true
+       renderList(displayTasks, this.listElement, this, hidden);
+    }
+
     displayTasks(hidden = true) {
         /*****************************************************
         * A function to display the list of tasks. 
@@ -215,6 +241,6 @@ export default class TodoList {
         * checkbox is toggled, or when a task is deleted.
         *****************************************************/ 
         renderList(getTasks(this.key), this.listElement, this, hidden);
-        renderTasksLeft(getTasks(this.key))
+        renderTasksLeft()
     }
 }
