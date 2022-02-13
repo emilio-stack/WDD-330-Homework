@@ -23,13 +23,13 @@ function renderList(taskList, listElement, todoListObject, hidden) {
     /*****************************************************
     * A function to render the current list of tasks. 
     ****************************************************/ 
-    console.log(taskList);
-
+    console.log("render was called")
     // Reset the list to prepare it to display the new tasks. 
     listElement.innerHTML = "";
   
     // Iterate through each task object in the task list.
     taskList.forEach(task => {
+
         // Initialize the variables.
         const li = document.createElement("li");
         const formattedDate = new Date(task.id).toLocaleDateString("en-US");
@@ -55,25 +55,40 @@ function renderList(taskList, listElement, todoListObject, hidden) {
         if(checkbox){
 
             // Listen for a change in the checkbox.
-            checkbox.addEventListener("change",function() {
+            checkbox.addEventListener("change", () => {
 
                 // If there is a change, toggle the completion of the task.
-                todoListObject.toggoleTaskComplete(task.id);
+                todoListObject.toggleTaskComplete(task.id)
             });  
         }
 
-        // // Get the delete button.
-        // deleteButton = li.childNodes[1];
+        // Get the delete button.
+        deleteButton = li.childNodes[1];
 
-        // if (deleteButton) {
-        //     // Listen for a change in the delete button.
-        //     deleteButton.addEventListener("change", todoListObject.removeTask(task.id));
-        // }
+        if (deleteButton) {
+            // Listen for a change in the delete button.
+            deleteButton.addEventListener("click", () => {
+
+                // If the delete button is clicked, remove the task.
+                todoListObject.removeTask(task.id)
+            });
+        }
         
         // Add the element to the list.
         listElement.appendChild(li);
     });
-  }
+}
+
+function renderTasksLeft(taskList){
+
+    // Get the destination
+    let tasksLeft = qs("#tasks-left");
+    let displayList = qs("#display-list")
+    let numTasksLeft = displayList.childNodes;
+
+    tasksLeft.innerHTML = "Tasks left: " + numTasksLeft.length;
+
+}
 
 function getTasks(key) {
     /*****************************************************
@@ -102,6 +117,7 @@ export default class TodoList {
 
         // The list element where the tasks will be displayed.
         this.listElement = listElement;
+
         // The key used to read and write to L\local storage. 
         this.key = key;
 
@@ -141,21 +157,21 @@ export default class TodoList {
         this.displayTasks();
     }
 
-    // removeTask(id) {
-    //     /*****************************************************
-    //      *  A function to remove a task by id.
-    //     *****************************************************/
+    removeTask(id) {
+        /*****************************************************
+         *  A function to remove a task by id.
+        *****************************************************/
 
-    //     // Get the corresponding task.
-    //     let task = this.findTask(id);
-
-    //     if (task) {
-    //         liveTasks.pop(task);
-    //         writeToLS(this.key, liveTasks);
-    //         this.displayTasks();
-    //         console.log(id + "removed")
-    //     }        
-    // }
+        // Get the corresponding task.
+        let task = this.findTask(id);
+        
+        if (task) {
+            liveTasks.pop(task);
+            writeToLS(this.key, liveTasks);
+            this.displayTasks();
+            console.log(id + " removed")
+        }        
+    }
 
     findTask(id) {
         /*****************************************************
@@ -199,5 +215,6 @@ export default class TodoList {
         * checkbox is toggled, or when a task is deleted.
         *****************************************************/ 
         renderList(getTasks(this.key), this.listElement, this, hidden);
+        renderTasksLeft(getTasks(this.key))
     }
 }

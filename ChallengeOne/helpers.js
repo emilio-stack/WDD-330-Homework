@@ -5,8 +5,6 @@ export function qs(selectorName) {
   }
   
   export function readFromLS(key) {
-    console.log(key)                                    
-    console.log(localStorage.getItem(key))            // this line is returning uncdefined. 
     return JSON.parse(localStorage.getItem(key));
   }
   export function writeToLS(key, data) {
