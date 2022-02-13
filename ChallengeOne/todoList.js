@@ -225,7 +225,7 @@ export default class TodoList {
        let currentTasks = getTasks(this.key);
 
        let displayTasks = currentTasks.filter((task)=>{
-            return task.completed
+            return !task.completed
        });
        console.log(displayTasks)
        let hidden = true
