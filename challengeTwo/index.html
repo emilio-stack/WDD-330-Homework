@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anglers Journal</title>
+    <script src="index.js" type="module" defer></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>Welcome to the Angler's Journal</h1>
+        <h2><i>For all your fishing adventures</i></h2>
+
+        <h3>Need to look up a fish species?</h3>
+        <input type="text" id="fish-species-input" placeholder="Enter a fish species...">
+        <button id="fish-species-search">Search</button>
+
+        <div id="new-log-button">New Log</div>
+        <div id="input-form-noShow">
+            <input type="text" id="title-input" placeholder="Title..." />
+            <input type="text" id="date-input" placeholder="Date..." />    <!-- MAYBE MAKE DATE SELECTION HERE LATER-->
+            <input type="text" id="time-input" placeholder="Time of Day..." /> <!-- MAYBE MAKE THIS A TIME INPUT LATER -->
+            <input type="text" id="fish-input" placeholder="Fish Species..." /> <!-- MAYBE MAKE THIS A OPTION SELECT WITH AN OTHER OF STRING-->
+            <input type="text" id="bait-input" placeholder="Bait Used..." />
+            <input type="text" id="address-input" placeholder="Address..." /> <!-- MAYBE WE SKIP THIS GIVEN TIME CONSTRAINTS-->
+            <input type="text" id="notes-input" placeholder="Notes..." />
+            <button id="create-log">Add Log</button>
+        </div>
+        <div id="log-list"></div>
+    </main>
+</body>
+</html>

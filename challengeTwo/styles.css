@@ -1,0 +1,16 @@
+#new-log-button {
+    background-color: blue;
+}
+
+#new-log-button:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+#input-form-noShow {
+    display: none;
+}
+
+#input-form-show {
+    display: block;
+}

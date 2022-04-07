@@ -1,0 +1,25 @@
+div#pagNav_holder {
+  width: 90%;
+  margin: 1rem auto;
+  margin-left: 5%;
+  text-align: center;
+  display: inline-flex;
+  overflow-x: auto;
+  /* justify-items: center; */
+}
+
+div#pagNav_holder > p {
+  padding: 0 0.7rem;
+}
+
+div#pagNav_holder > p#current {
+  background-color: red;
+  color: whitesmoke;
+}
+
+div#pokedexList {
+  width: 100%;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
