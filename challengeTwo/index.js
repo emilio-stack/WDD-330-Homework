@@ -160,13 +160,20 @@ async function searchFishSpecies()
     const species = document.getElementById('fish-species-input').value;
 
     // Next make build the api call url
-    const baseURL = 'https://www.fishwatch.gov/api/species';
-    const url = baseURL ;
+    const baseURL = 'https://www.fishwatch.gov/api/species/';
+    const url = baseURL + species;
 
     // Now make the call to the url
-    let response = await fetch(url, {mode: 'no-cors'})
-    let data = response.json()
-    data.then(json => { console.log(json)});
+    fetch(url, {
+        mode: 'cors',
+        headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS',
+            'Access-Control-Allow-Headers' : 'Content-Type'
+        }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
 }
 
 // Read the existing logs from local storage and display the logs 
