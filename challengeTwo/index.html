@@ -10,15 +10,19 @@
 </head>
 <body>
     <main>
-        <h1>Welcome to the Angler's Journal</h1>
-        <h2><i>For all your fishing adventures</i></h2>
+        <div id="headings">
+            <h1>Welcome to the Angler's Journal</h1>
+            <h2><i>For all your fishing adventures</i></h2>
+        </div>
 
-        <h3>Need to look up a fish species?</h3>
-        <input type="text" id="fish-species-input" placeholder="Enter a fish species...">
-        <button id="fish-species-search">Search</button>
+        <div id="search-species-div">
+            <h3 id="search-title">Need to look up a fish species?</h3>
+            <input type="text" id="fish-species-input" placeholder="Enter a fish species...">
+            <button id="fish-species-search">Search</button>
+        </div>
 
         <div id="new-log-button">New Log</div>
-        <div id="input-form-noShow">
+        <div id="input-form-noShow" class="form">
             <input type="text" id="title-input" placeholder="Title..." />
             <input type="text" id="date-input" placeholder="Date..." />    <!-- MAYBE MAKE DATE SELECTION HERE LATER-->
             <input type="text" id="time-input" placeholder="Time of Day..." /> <!-- MAYBE MAKE THIS A TIME INPUT LATER -->

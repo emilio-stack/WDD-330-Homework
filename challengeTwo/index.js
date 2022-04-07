@@ -87,19 +87,35 @@ function renderLogs(logList, listElement) {
     logList.forEach(log => {
 
         // Create the new log elements
+        let section1 = document.createElement('div');
+        section1.className = 'section1'
+        let section2 = document.createElement('div');
+        section2.className = 'section2'
+        let section3 = document.createElement('div');
+        section3.className = 'section3'
+        let section4 = document.createElement('div');
+        section4.className = 'section4'
         let logDiv = document.createElement('div');
+        logDiv.className = 'log-div';
         let logTitle = document.createElement('h3');
+        logTitle.className = 'log-title';
         let logDate = document.createElement('p');
+        logDate.className = 'log-date'
         let logTime = document.createElement('p');
+        logTime.className = 'log-time'
         let fishType = document.createElement('h4');
+        fishType.className = 'fish-type'
         let baitUsed = document.createElement('p');
+        baitUsed.className = 'bait-used'
         let place = document.createElement('p');
+        place.className = 'address'
         let comments = document.createElement('p');
+        comments.className = 'notes'
         const li = document.createElement("li");
         let deleteButton = null;
-        li.innerHTML = `<button>X</button>`;
+        li.innerHTML = `<button>Delete Log</button>`;
+        li.className = 'delete-button'
 
-        // Assign the new log elements the input values
         logTitle.textContent = log.title;
         logDate.textContent = log.date;
         logTime.textContent = log.time;
@@ -110,14 +126,18 @@ function renderLogs(logList, listElement) {
         
 
         // Assign the elements to the new log div
-        logDiv.appendChild(logTitle);
-        logDiv.appendChild(logDate);
-        logDiv.appendChild(logTime);
-        logDiv.appendChild(fishType);
-        logDiv.appendChild(baitUsed);
-        logDiv.appendChild(place);
-        logDiv.appendChild(comments);
-        logDiv.appendChild(li);
+        section1.appendChild(logTitle);
+        section1.appendChild(logDate);
+        section1.appendChild(logTime);
+        section2.appendChild(fishType);
+        section2.appendChild(baitUsed);
+        section3.appendChild(place);
+        section3.appendChild(li);
+        section4.appendChild(comments);
+        logDiv.appendChild(section1);
+        logDiv.appendChild(section2);
+        logDiv.appendChild(section3);
+        logDiv.appendChild(section4);
 
         // Listen for a change in the delete button.
         deleteButton = li.childNodes[0];

@@ -1,10 +1,44 @@
+#headings {
+    text-align: center;
+    padding: 40px;
+}
+
+h2 {
+    color: #0285C9;
+}
+
+#search-title {
+    text-align: center;
+}
+
+#search-species-div {
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border: 2px solid black;
+    background-color: #eaeaea;
+}
+
+#fish-species-input {
+    margin: auto;
+}
+
 #new-log-button {
-    background-color: blue;
+    max-width: 20%;
+    margin: auto;
+    border: 2px solid black;
+    background-color: #0285C9;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 25px;
 }
 
 #new-log-button:hover {
     cursor: pointer;
-    background-color: aqua;
+    background-color: #343a3f;
 }
 
 #input-form-noShow {
@@ -13,4 +47,112 @@
 
 #input-form-show {
     display: block;
+}
+
+.form {
+    max-width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border: 2px solid #343a3f;
+}
+
+.form input {
+    font-size: 20px;
+    margin-top: 1rem;
+    display: inline;
+    width: 30%;
+}
+
+#notes-input {
+    min-width: 93.5%;
+}
+
+#create-log {
+    font-family: serif;
+    max-width: 30%;
+    width: 25%;
+    margin-top: 1.5rem;
+    margin-left: 70%;
+    border: 2px solid black;
+    background-color: #0285C9;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 20px;
+}
+
+.log-div {
+    display: grid;
+    border: 30px double #0285C9;
+    background-color: #343a3f;
+    color: #eaeaea;
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    padding-left: .5rem;
+    font-family: sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.section1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: center;
+}
+
+.section2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: center;
+}
+
+.section3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    text-align: center;
+}
+
+.section4 {
+    grid-column: 2/4;
+    grid-row: 1/4;
+    text-align: center;
+}
+
+.log-title {
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.log-date, .log-time {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.fish-type {
+    font-size: 23px;
+    margin-bottom: 0px;
+}
+
+.bait-used {
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.address {
+    font-size: 16px;
+    margin-bottom: 5rem;
+}
+
+.delete-button {
+    list-style: none;
+}
+
+.notes {
+    font-size: 20px;
 }
