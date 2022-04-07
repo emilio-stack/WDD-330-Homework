@@ -165,9 +165,8 @@ async function searchFishSpecies()
 
     // Now make the call to the url
     let response = await fetch(url, {mode: 'no-cors'})
-    console.log(response);
-    let data = await response.json();
-    console.log(data);
+    let data = response.json()
+    data.then(json => { console.log(json)});
 }
 
 // Read the existing logs from local storage and display the logs 
